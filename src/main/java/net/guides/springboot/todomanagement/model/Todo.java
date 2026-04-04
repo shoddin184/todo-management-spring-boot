@@ -23,6 +23,8 @@ public class Todo {
 	private String description;
 
 	private Date targetDate;
+
+	private boolean isDone;
 	
 	public Todo() {
 		super();
@@ -33,6 +35,7 @@ public class Todo {
 		this.userName = user;
 		this.description = desc;
 		this.targetDate = targetDate;
+		this.isDone = isDone;
 	}
 
 	public long getId() {
@@ -65,5 +68,13 @@ public class Todo {
 
 	public void setTargetDate(Date targetDate) {
 		this.targetDate = targetDate;
+	}
+
+	public boolean isDone() {
+		return isDone;
+	}
+
+	public void setDone(boolean isDone) {
+		this.isDone = isDone;
 	}
 }
