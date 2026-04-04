@@ -8,6 +8,5 @@ import net.guides.springboot.todomanagement.model.Todo;
 
 public interface TodoRepository extends JpaRepository<Todo, Long>{
 	List<Todo> findByUserName(String user);
-	List<Todo> findById(long id);
 	List<Todo> findByIsDone(boolean isDone);
 }
