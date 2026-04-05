@@ -16,8 +16,9 @@
 				<thead>
 					<tr>
 						<th width="40%">Description</th>
-						<th width="40%">Target Date</th>
+						<th width="30%">Target Date</th>
 						<th width="20%"></th>
+						<th width="10%">完了</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -29,10 +30,11 @@
 							<td><a type="button" class="btn btn-success"
 								href="/update-todo?id=${todo.id}">編集</a>
 							<a type="button" class="btn btn-warning"
-								href="/done-todo?id=${todo.id}">完了済</a>
-							<a type="button" class="btn btn-warning"
 								href="/delete-todo?id=${todo.id}">消去</a></td>
-							
+							<td><c:choose>
+								<c:when test="${todo.done}">済</c:when>
+								<c:otherwise>未</c:otherwise>
+								</c:choose></td>
 						</tr>
 					</c:forEach>
 				</tbody>
