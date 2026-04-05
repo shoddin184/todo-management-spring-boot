@@ -95,4 +95,10 @@ public class TodoController {
 		todoService.saveTodo(todo);
 		return "redirect:/list-todos";
 	}
+
+	@RequestMapping(value = "/done-todo", method = RequestMethod.GET)
+	public String doneIsDone(@RequestParam long id) {
+		todoService.doneIsDone(id);
+		return "redirect:/list-todos";
+	}
 }

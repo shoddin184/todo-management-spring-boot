@@ -21,4 +21,6 @@ public interface ITodoService {
 	
 	void saveTodo(Todo todo);
 
+	void doneIsDone(long id);
+
 }

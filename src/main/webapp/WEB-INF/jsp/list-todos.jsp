@@ -1,3 +1,4 @@
+<%@ page pageEncoding="UTF-8" %>
 <%@ include file="common/header.jspf"%>
 <%@ include file="common/navigation.jspf"%>
 
@@ -26,9 +27,12 @@
 							<td><fmt:formatDate value="${todo.targetDate}"
 									pattern="dd/MM/yyyy" /></td>
 							<td><a type="button" class="btn btn-success"
-								href="/update-todo?id=${todo.id}">Update</a>
+								href="/update-todo?id=${todo.id}">編集</a>
 							<a type="button" class="btn btn-warning"
-								href="/delete-todo?id=${todo.id}">Delete</a></td>
+								href="/done-todo?id=${todo.id}">完了済</a>
+							<a type="button" class="btn btn-warning"
+								href="/delete-todo?id=${todo.id}">消去</a></td>
+							
 						</tr>
 					</c:forEach>
 				</tbody>
