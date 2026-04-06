@@ -23,4 +23,6 @@ public interface ITodoService {
 
 	void doneIsDone(long id);
 
+	void undoneIsDone(long id);
+
 }

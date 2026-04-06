@@ -58,4 +58,14 @@ public class TodoService implements ITodoService {
 			todoRepository.save(todo);
 		}
 	}
+
+	@Override
+	public void undoneIsDone(long id) {
+		Optional<Todo> optionalTodo = todoRepository.findById(id);
+		if(optionalTodo.isPresent()) {
+			Todo todo = optionalTodo.get();
+			todo.setDone(false);
+			todoRepository.save(todo);
+		}
+	}
 }

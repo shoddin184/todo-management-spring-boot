@@ -30,7 +30,7 @@ public class TodoController {
 	@InitBinder
 	public void initBinder(WebDataBinder binder) {
 		// Date - dd/MM/yyyy
-		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+		SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
 		binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, false));
 	}
 
@@ -99,6 +99,12 @@ public class TodoController {
 	@RequestMapping(value = "/done-todo", method = RequestMethod.GET)
 	public String doneIsDone(@RequestParam long id) {
 		todoService.doneIsDone(id);
+		return "redirect:/list-todos";
+	}
+
+	@RequestMapping(value = "/undone-todo", method = RequestMethod.GET)
+	public String undoneIsDone(@RequestParam long id) {
+		todoService.undoneIsDone(id);
 		return "redirect:/list-todos";
 	}
 }
